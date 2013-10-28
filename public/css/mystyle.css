@@ -1,0 +1,13 @@
+.header{
+	background:#000 url('../img/cream_pixels.png') repeat;
+	border-bottom: #ccc 1px solid;
+	margin: 0 0 10px 0;
+	padding-top:  10px;
+	height: 65px;
+}
+.container{
+	max-width: 970px;
+}
+.divider{
+	margin-bottom: 5px;
+}
