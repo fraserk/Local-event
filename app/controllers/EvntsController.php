@@ -129,7 +129,15 @@ class EvntsController extends BaseController {
     public function PostUpload()
     {
         
-        
+        $input = Input::all();
+        $rules = array( 'flier'=>'image|mimes:jpg,gif,png,jpeg|max:3000|required') ;
+        $v = Validator::make($input, $rules);
+
+        if ($v->fails())
+        {
+
+            return Redirect::route('upload',Input::get('evnt_id'))->witherrors($v);
+        }
         
         $evnt_id = Input::get('evnt_id');
         if (Input::hasfile('flier'))
@@ -141,7 +149,7 @@ class EvntsController extends BaseController {
             $evnt->save();  
             $destinationpath = 'uploads/'.$evnt->id ;           
             Input::file('flier')->move($destinationpath,$filename);
-            return 'file upload';
+            return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
         }
     }
 
