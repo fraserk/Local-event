@@ -21,7 +21,13 @@
                 <ul class="nav nav-pills pull-right">
                     <li class="active">{{HTML::linkroute('evnts.index','Home')}}</li>
                     <li class="">{{HTML::linkroute('evnts.create','Post Event')}}</li>
-                    <li class=""><a href="#">Main Item 3</a></li>
+                   @if(Auth::check())
+                    <li class="">{{HTML::linkroute('logout','Log-out')}}</li>
+                    <li class="">{{HTML::linkroute('dashboard','My account')}}</li>
+                   @else
+                   <li class="">{{HTML::linkroute('login','Login')}}</li>
+                   @endif
+                                        
                  </ul>
                  <img src="img/letsgo.gif">
     </div>

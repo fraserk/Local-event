@@ -20,6 +20,7 @@ route::get('evnts/upload/{id}',array('as'=>'upload','uses'=> 'EvntsController@Ge
 route::post('/upload',array('as'=>'postupload','uses'=> 'EvntsController@PostUpload'));
 route::get('/dashboard',array('as'=>'dashboard', 'uses'=>'UsersController@dashboard'))->before('auth');
 Route::get('user/login',array('as'=>'login','uses'=>'UsersController@login'));
+Route::get('user/logout',array('as'=>'logout','uses'=>'UsersController@destroy'));
 Route::post('user/loginck',array('as'=>'loginck','uses'=>'UsersController@loginck'));
 Route::resource('evnts', 'EvntsController');
 Route::resource( 'user', 'UsersController');

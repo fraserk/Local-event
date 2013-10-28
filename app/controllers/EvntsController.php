@@ -7,6 +7,11 @@ class EvntsController extends BaseController {
      *
      * @return Response
      */
+
+    public function __construct()
+    {
+        $this->beforefilter('auth', array('only'=>array('create','store','edit','update','destroy')));
+    }
     public function index()
     {
         $evnts = Evnt::all();

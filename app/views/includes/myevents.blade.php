@@ -23,7 +23,7 @@
 					<td>{{$e->name}}</td>
 					<td>{{$e->venue->venue_name}}</td>
 					<td>{{$e->when}}</td>
-					<td> <a href={{URL::route('evnts.edit',$e->id)}}><span class="glyphicon glyphicon-edit"></span></a> | <span class="glyphicon glyphicon-trash"></span></td>
+					<td> <a href={{URL::route('evnts.edit',$e->id)}}><span class="glyphicon glyphicon-edit"></span></a> |<a href={{URL::route('upload',$e->id)}}><span class="glyphicon glyphicon-upload"></span></a>|</span><span class="glyphicon glyphicon-trash"></span></td>
 
 				</tr>
 			@endforeach	
