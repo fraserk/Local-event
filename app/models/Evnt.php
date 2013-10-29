@@ -5,8 +5,7 @@ class Evnt extends Eloquent {
     protected $softDelete = True;
 
    public static $rules = array(
-    	'name' => 'required',
-      'flier' => 'image|mime:jpg,gif,png|max:3000'
+    	'name' => 'required'
     	);
 
    public function Venue(){

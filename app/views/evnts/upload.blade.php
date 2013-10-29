@@ -1,22 +1,36 @@
 @extends('layout.template')
 
 	@section('content')
-		<h2>Upload a flier for your event</h2>
-		{{$evnt->id}}
+	<div class="row">
+			<h2>Upload a flier for your event</h2>
 
-		{{Form::open(array('files'=>true,'route'=>'postupload','class'=>'form-horizontal','role'=>'form'))}}		
-		<div class=form-group> 
-			<div class="well well-lg">
-				{{Form::label('flier','Upload a flier:',array('class'=>'control-label col-md-2'))}}
-				
-				<div class="col-md-4">
+		@if ($errors->any())
+		    <ul>
+		        {{ implode('', $errors->all('<li class="error">:message</li>')) }}
+		    </ul>
+		@endif
+
+		{{Form::open(array('files'=>true,'route'=>'postupload','role'=>'form'))}}		
+		<div class=" well well-lg col-md-8"> 
+				<div class="input-group">
+				{{Form::label('flier','Upload a flier:',array('class'=>'control-label'))}}
+							
 					{{Form::file('flier')}}
 					{{Form::hidden('evnt_id',$evnt->id)}}
-				</div>
-				{{Form::submit()}}
-			</div>
+			<br />
+					{{Form::submit('Upload File',array('class'=>'btn btn-primary'))}}
+				
 		</div>
+		
 		{{Form::close()}}
+
+		@if($evnt->flier)
+		<br />
+			<img src={{asset('/uploads/'.$evnt->id .'/'.$evnt->flier)}}>
+			@else
+			no image
+			@endif
+	</div>
 
 
 	@stop
