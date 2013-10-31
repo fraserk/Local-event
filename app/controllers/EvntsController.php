@@ -149,8 +149,8 @@ class EvntsController extends BaseController {
             $evnt->save();  
             $destinationpath = 'uploads/'.$evnt->id ;           
             Input::file('flier')->move($destinationpath,$filename);
-            Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(5, 5)->save('foo.jpg');
-            //return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
+            Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(100, 150, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
+            return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
         }
     }
 

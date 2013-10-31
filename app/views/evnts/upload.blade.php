@@ -27,6 +27,8 @@
 		@if($evnt->flier)
 		<br />
 			<img src={{asset('/uploads/'.$evnt->id .'/'.$evnt->flier)}}>
+			<h4>Thumbnail</h4>
+			<img src={{asset('/uploads/'.$evnt->id .'/' .'thumb_' .$evnt->flier)}}>
 			@else
 			no image
 			@endif
