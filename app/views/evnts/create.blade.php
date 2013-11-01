@@ -9,7 +9,7 @@
 
         
 
-        {{ Form::open(array('route' => 'evnts.store','class'=>'form-horizontal','role'=>'form','files'=>true)) }}
+        {{ Form::open(array('route' => 'evnts.store','class'=>'form-horizontal','role'=>'form')) }}
             
             
                 <div class="form-group">

@@ -29,7 +29,7 @@
                    @endif
                                         
                  </ul>
-                 <img src="img/letsgo.gif">
+                 <img src={{asset('img/letsgo.gif')}} />
     </div>
   </section>
 

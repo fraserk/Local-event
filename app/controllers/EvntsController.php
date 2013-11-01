@@ -78,8 +78,9 @@ class EvntsController extends BaseController {
      */
     public function edit($id)
     {
+        $venue = Venue::lists('venue_name','id');
         $evnt = Evnt::find($id);
-        return View::make('evnts.edit')->with('evnt',$evnt);
+        return View::make('evnts.edit')->with('evnt',$evnt)->with('venues',$venue);
     }
 
     /**
@@ -149,7 +150,7 @@ class EvntsController extends BaseController {
             $evnt->save();  
             $destinationpath = 'uploads/'.$evnt->id ;           
             Input::file('flier')->move($destinationpath,$filename);
-            Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(100, 150, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
+            Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(200, 135, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
             return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
         }
     }
