@@ -142,15 +142,28 @@ class EvntsController extends BaseController {
         
         $evnt_id = Input::get('evnt_id');
         if (Input::hasfile('flier'))
-        {
+        {   
+            $imgwidth = getimagesize(Input::file('flier'));
             $extension = Input::file('flier')->getClientOriginalExtension();
             $filename = Str_random(8) .'.' . $extension;
             $evnt = Evnt::find($evnt_id);
             $evnt->flier = $filename;
             $evnt->save();  
-            $destinationpath = 'uploads/'.$evnt->id ;           
+            $destinationpath = 'uploads/'.$evnt->id ;
             Input::file('flier')->move($destinationpath,$filename);
+
+            if($imgwidth[0] > '350') //resize image if its bigger than 350 px
+            {
+                //resize the image
+                Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(350, null, true)->save('uploads/'.$evnt->id .'/' .$evnt->flier);
+
+            }           
+
+            //create the thumbnail as usuall
             Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(200, 135, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
+
+
+
             return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
         }
     }

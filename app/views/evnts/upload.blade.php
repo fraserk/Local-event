@@ -26,6 +26,12 @@
 
 		@if($evnt->flier)
 		<br />
+			<?php 
+
+			$img = getimagesize(asset('/uploads/'.$evnt->id .'/'.$evnt->flier));
+			echo ($img[0]);
+			?>
+			<br />
 			<img src={{asset('/uploads/'.$evnt->id .'/'.$evnt->flier)}}>
 			<h4>Thumbnail</h4>
 			<img src={{asset('/uploads/'.$evnt->id .'/' .'thumb_' .$evnt->flier)}}>

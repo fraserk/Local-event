@@ -4,15 +4,14 @@
 		
 	<div class="row">
 
-		<div class="col-md-8">
-			<div class="head">
-				<h3>{{$evnt->name}} </h3>
+		<div class="col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-heading">{{$evnt->name}} </div>
+					<div class="panel-body">		
+						{{$evnt->detail}}
+					</div>
 			</div>
-
 			
-			<p>{{$evnt->detail}}</p>
-
-			<hr />
 			{{HTML::linkroute('evnts.edit','edit',$evnt->id)}} | 
 
 			{{Form::open(array('url'=>route('evnts.destroy',$evnt->id),'method'=>'DELETE'))}}
@@ -23,10 +22,27 @@
 		</div>
 
 		<!-- sidebar -->
-		<div class="col-md-4">
-			<div class="panel">
-				<span class="label ">where:</span>{{$evnt->venue}} <span class="label alert">when:{{date("M,d",strtotime($evnt->when))}}</span>
-			</div>
+		<div class="col-md-5">
+				<div class="panel panel-default">
+					  <div class="panel-heading">When and Where</div>
+							  <div class="panel-body">
+							    {{$evnt->when}} @ <br />
+							    {{$evnt->venue->venue_name}}
+							  </div>
+				</div>	
+
+				<div class="panel panel-default">
+					  <div class="panel-heading">Flier</div>
+							  <div class="panel-body">
+								    @if($evnt->flier)
+										
+											<img src={{asset('/uploads/'.$evnt->id .'/'.$evnt->flier) }} width="340px">									
+											@else
+											no image
+									@endif
+							  </div>
+				</div>				
 		</div>
 	</div>
+	
 	@stop
