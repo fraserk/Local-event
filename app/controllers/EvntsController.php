@@ -89,14 +89,14 @@ class EvntsController extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function update()
+    public function update($id)
     {
-        $id = Input::get('id');
+        //$id = Input::get('id');
 
         $evnt = Evnt::find($id)->first();
 
         $evnt->name = Input::get('name');
-        $evnt->venue = Input::get('venue');
+        $evnt->venue_id = Input::get('venue');
         $evnt->when = Input::get('when');
         $evnt->detail = Input::get('detail');
 

@@ -7,11 +7,8 @@
 
     <div class="row">
 
-        
-
         {{ Form::open(array('route' => 'evnts.store','class'=>'form-horizontal','role'=>'form')) }}
-            
-            
+                 
                 <div class="form-group">
                   {{ Form::label('name', 'Event Name:',array('class'=>'control-label col-md-2')) }}
                   <div class="col-md-4">
