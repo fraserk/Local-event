@@ -14,7 +14,7 @@ class EvntsController extends BaseController {
     }
     public function index()
     {
-        $evnts = Evnt::all();
+        $evnts = Evnt::with('venue')->paginate(20);
         return View::make('evnts.index')->with('evnts',$evnts);
     }
 
@@ -35,21 +35,26 @@ class EvntsController extends BaseController {
      * @return Response
      */
     public function store()
-    {
+    {   
+       $input = Input::all();
        
-       $v = Validator::make(Evnt::$rules, Input::all());
+       $v = Validator::make($input,evnt::$rules);
        if ($v->fails())
        {
         return Redirect::route('evnts.create')->witherrors($v)->withinput();
        }   
 
-
+       //$date = Input::get('year') .'/' . .'/' .Input::get('day') .' ' .Input::get('hour') .':'.Input::get('minute') .':' .'00';
+       
+       $dt = Carbon::create(Input::get('year'), Input::get('month'), Input::get('day') , Input::get('hour'), Input::get('minute'));
+      // return dd($dt);
        $user = Auth::user()->id; 
        $evnt = New Evnt(array(
         'name' => Input::get('name'),
         'user_id' => $user,
-        'when' => Input::get('when'),
+        'when' => $dt,
         'detail' => Input::get('detail'),
+        'admission' => Input::get('admission')
         //'flier' => $filename
         ));
 
@@ -68,6 +73,7 @@ class EvntsController extends BaseController {
         $evnt = Evnt::find($id);
 
         return View::make('evnts.show')->with('evnt',$evnt);
+       //return dd($evnt->when->diffforhumans());
     }
 
     /**
@@ -80,6 +86,7 @@ class EvntsController extends BaseController {
     {
         $venue = Venue::lists('venue_name','id');
         $evnt = Evnt::find($id);
+
         return View::make('evnts.edit')->with('evnt',$evnt)->with('venues',$venue);
     }
 
@@ -92,7 +99,13 @@ class EvntsController extends BaseController {
     public function update($id)
     {
         //$id = Input::get('id');
-
+         $input = Input::all();
+       
+       $v = Validator::make($input,evnt::$rules);
+       if ($v->fails())
+       {
+        return Redirect::route('evnts.create')->witherrors($v)->withinput();
+       } 
         $evnt = Evnt::find($id)->first();
 
         $evnt->name = Input::get('name');
@@ -152,10 +165,10 @@ class EvntsController extends BaseController {
             $destinationpath = 'uploads/'.$evnt->id ;
             Input::file('flier')->move($destinationpath,$filename);
 
-            if($imgwidth[0] > '350') //resize image if its bigger than 350 px
+            if($imgwidth[0] > '340') //resize image if its bigger than 350 px
             {
                 //resize the image
-                Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(350, null, true)->save('uploads/'.$evnt->id .'/' .$evnt->flier);
+                Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(340, null, true)->save('uploads/'.$evnt->id .'/' .$evnt->flier);
 
             }           
 

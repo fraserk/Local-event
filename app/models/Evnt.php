@@ -5,9 +5,14 @@ class Evnt extends Eloquent {
     protected $softDelete = True;
 
    public static $rules = array(
-    	'name' => 'required'
+    	'name' => 'required',
+      'admission' => 'required',
+      'detail' => 'required'
     	);
 
+   public function getDates(){
+    return['created_ad','updated_at','deleted_at','when'];
+   }
    public function Venue(){
 
    	return $this->BelongsTo('venue');

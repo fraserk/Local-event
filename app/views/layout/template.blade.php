@@ -12,6 +12,8 @@
 
       {{HTML::style('css/bootstrap.css')}}
       {{HTML::style('css/mystyle.css')}}
+      {{HTML::style('css/bootstrap-timepicker.css')}}
+
 
   <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 </head>
@@ -29,10 +31,10 @@
                    @endif
                                         
                  </ul>
-                 <img src={{asset('img/letsgo.gif')}} />
+                 <img src={{asset('img/letsgo.png')}} />
     </div>
   </section>
-
+<section class="article">
   <div class="container">
                   
                               @if(Session::has('message'))
@@ -44,11 +46,31 @@
               
            <!-- End of Body -->
   </div>
-  
-<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  {{HTML::script('js/bootstrap.js')}}
-  {{HTML::script('js/evnt_js.js')}}
+</section>
 
+<section class="footer">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-md-4">
+         <ul class="nav">
+                      <li class="active">{{HTML::linkroute('evnts.index','Home')}}</li>
+                      <li class="">{{HTML::linkroute('evnts.create','Post Event')}}</li>
+                     @if(Auth::check())
+                      <li class="">{{HTML::linkroute('logout','Log-out')}}</li>
+                      <li class="">{{HTML::linkroute('dashboard','My account')}}</li>
+                     @else
+                     <li class="">{{HTML::linkroute('login','Login')}}</li>
+                     @endif
+                                          
+          </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  {{HTML::script('js/bootstrap.js')}}  
+  {{HTML::script('js/bootstrap-timepicker.js')}}
+  {{HTML::script('js/evnt_js.js')}}
 
  <script type="text/javascript">
 

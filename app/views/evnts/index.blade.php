@@ -1,30 +1,55 @@
 @extends('layout.template')
 
 @section('content')
-<div class="row">
-@foreach($evnts as $e)
-	
-	   <div class="col-md-3 divider">
-	    
-		    <div class="thumbnail">
-		    	@if($e->flier)
-		    	<img src={{asset('/uploads/' .$e->id .'/thumb_' .$e->flier)}}>
-		    	@else
-				<img src="http://placehold.it/300x200">
-				@endif
-		         
-		    
-			    <div class="caption">
-			                            <h4>{{HTML::linkroute('evnts.show',$e->name,$e->id)}} </h4>
-			                            {{$e->id}}
-			                            <small>Taj Lounge @ 7:00 AM</small>
-			                            <p>www.GAMETIGHTNY.com Fridays at Club Amnesia NYC Guestlist - </p>
-			    </div>
-			</div>
+	<div class="row ">
+		
+	    <div class="col-md-12 coming">
+	  <h1 class="splash"> 
+	    	Discover great local events in the New York Area. See what's happening this weekend..   
+	    </h1>
+	    		<span class="label label-info">UPCOMING EVENTS</span> <br />
+	    	
 		</div>
-	
-	@endforeach
-</div>
+		
+			@foreach($evnts as $e)
+		
+				   <div class="col-md-3 divider">
+				    
+					    <div class="thumbnail">
+					    	<br />
+					    	@if($e->flier)
+					    	<img src={{asset('/uploads/' .$e->id .'/thumb_' .$e->flier)}}>
+					    	@else
+							<img src="http://placehold.it/300x200">
+							@endif
+					         
+					    
+						    <div class="caption">
+						                            <h4>{{HTML::linkroute('evnts.show', Str::Limit($e->name,$limit=14, $end ='..'),$e->id)}} </h4>
+						                            
+						                           
+						                            <p>{{Str::Limit($e->detail,$limit=45,$end='...')}}</p>
+						    </div>
+						    <div class="event_footer">
+						    	<span class="glyphicon glyphicon-time"></span> 
+						    	{{ $e->when->toDayDateTimeString() }}<br/>
+						    	<span class="glyphicon glyphicon-map-marker"></span> {{$e->venue->venue_name}}
+						    	
+						    </div>
+						</div>
+					</div>
+		
+			@endforeach
+
+		
+				
+			
+	</div> 
+	<div class"row">
+		<div class="col-md-12">
+					{{$evnts->links()}}
+		</div>
+	</div>
 @stop
 
 

@@ -16,7 +16,7 @@ class CreateEvntsTable extends Migration {
             $table->increments('id');
             $table->string('name');
 			$table->string('venue');
-			$table->datetime('when');
+			$table->timestamps('when');
 			$table->text('detail');
             $table->timestamps();
         });

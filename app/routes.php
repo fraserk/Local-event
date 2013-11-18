@@ -11,6 +11,11 @@
 |
 */
 
+// Event::listen('illuminate.query', function($sql)
+// {
+// 	var_dump($sql);
+// });
+
 Route::get('/', function()
 {
 	return View::make('hello');

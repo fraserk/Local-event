@@ -60,7 +60,7 @@ class UsersController extends BaseController {
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
-		return 'save';
+		return Redirect::intended('/');
 
 
 	}
