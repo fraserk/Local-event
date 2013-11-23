@@ -12,7 +12,7 @@ class UsersController extends BaseController {
 	{
        // return View::make('user.login');
 		$id = Auth::user()->id;
-		$evnts = User::find($id)->evnts;
+		$evnts = User::find($id)->evnts()->paginate(15);
 		 //dd($evnts);
 		return View::make('user.dashboard')->with('evnts',$evnts);
 	}
@@ -53,7 +53,13 @@ class UsersController extends BaseController {
 	 */
 	public function store()
 	{
-	
+		$input = Input::all();
+
+		$v = Validator::make($input, User::$rules);
+		If ($v->fails())
+		{
+			return Redirect::route('user.create')->witherrors($v);
+		}
 		$user = new User;
 		$user->username = Input::get('username');
 		$user->email = Input::get('email');

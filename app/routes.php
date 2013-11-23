@@ -30,7 +30,10 @@ Route::post('user/loginck',array('as'=>'loginck','uses'=>'UsersController@loginc
 Route::resource('evnts', 'EvntsController');
 Route::resource( 'user', 'UsersController');
 
-Route::resource('venues', 'VenuesController');// Adding auth checks for the upload functionality is highly recommended.
+Route::get('password_reset/reset/{token}','PasswordResetController@reset');
+Route::post('password_reset/reset/{token}','PasswordResetController@Postreset');
+Route::resource('venues', 'VenuesController');
+Route::resource('password_reset','PasswordResetController');
 
 // Cabinet routes
 Route::get('upload/data', 'UploadController@data');

@@ -8,4 +8,9 @@ class Venue extends Eloquent {
     public function Evnts(){
     	return $this->HasMany('Evnt');
     }
+
+    public function User()
+    {
+    	return $this->belongsto('user');
+    }
 }

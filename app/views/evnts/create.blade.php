@@ -13,13 +13,14 @@
                  @include('includes._evnt_form')
 
 
-                <div class="form-group">
-                  <div class="col-xs-12">              
-                           <p>{{ Form::submit('Create Event',array('class'=>'btn btn-primary')) }}</p>
-                    </div>
+               
                 </div>
               </div>
-
+                <div class="panel-footer">   
+                  <div class='col-md-12 col-md-offset-9'>          
+                           <p>{{ Form::submit('Create Event',array('class'=>'btn btn-primary')) }} Cancel</p> 
+                         </div>
+                    </div>
                 {{ Form::close() }}
           </div>
         </div>

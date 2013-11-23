@@ -29,10 +29,11 @@ class VenuesController extends BaseController {
      */
     public function store()
     {
-        $venue = New Venue(Input::all());
-        $venue->save();
+        $user = Auth::user()->id;
+        $venue = New Venue(Input::except('Search'));   
+        
 
-        $message = $venue;
+        $message =User::find($user)->venues()->save($venue);
         return $message;
 
     }

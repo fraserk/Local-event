@@ -1,23 +1,53 @@
 @extends('layout.template')
 
 @section('content')
+	<div class='row'>
+		
+		<div class="col-md-5 col-md-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h3>Please Login.</h3> </div>
+							<div class="{{$errors->has('email')? 'alert alert-warning' : ''}}">{{$errors->first('email') }}</div>
+						{{ Form::open(array('route' => 'loginck','class'=>'form-horizontal','role'=>'form')) }}
+			
+				<div class="panel-body">
 
-<h3>Please Login</h3>
-{{ Form::open(array('route' => 'loginck','class'=>'form-horizontal','role'=>'form')) }}
-	<div>
-		{{ Form::label('username', 'Username:') }}
-		{{ Form::text('username') }}
-	</div>
+				<div class="form-group">
+				<div class="col-xs-8">
+					
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						{{ Form::text('username',null,['class'=>'form-control']) }}
+					</div>
+				</div>
+				</div>
+				<div class="form-group">
+				<div class='col-xs-8'>
+					
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+				{{ Form::password('password',['class'=>'form-control']) }}
+				</div>
+			</div>
+					</div>
+				<div class="checkbox">
+					<label>
+						 {{form::checkbox('remember')}} Remember Me
+					</label>
+				</div>
+		
+					
+			</div>
+			
+			<div class="panel-footer">{{ Form::submit('login',['class'=>'btn btn-primary']) }}
+				{{link_to_route('user.create','Sign-up')}} | {{link_to_route('password_reset.create','Forgot password?')}}
+			</div>
+			
+		{{ Form::close() }}
+					
+			</div>		
+		</div>
+		</div>
+	
 
-	<div>
-		{{ Form::label('password', 'password:') }}
-		{{ Form::password('password') }}
-	</div>
-
-	<div>
-		{{ Form::submit() }}
-	</div>
-{{ Form::close() }}
-
-
+	
 @stop

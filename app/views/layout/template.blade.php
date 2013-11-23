@@ -71,7 +71,9 @@
   {{HTML::script('js/bootstrap.js')}}  
   {{HTML::script('js/bootstrap-timepicker.js')}}
   {{HTML::script('js/evnt_js.js')}}
-
+  
+  {{HTML::script('js/maps.js')}}
+ 
  <script type="text/javascript">
 
 // $('#venue').append($('<option>', {
@@ -89,7 +91,7 @@ $("button#submit").click(function(){
                $.ajax({
                 type: "POST",
                 url: "http://localhost/nygoing/public/venues",
-                
+
                 data: $('form.add_venue').serialize(),
                 success: function(msg){
                    //$(venue).append(theNewListItem);
@@ -97,7 +99,7 @@ $("button#submit").click(function(){
                      $("#myModal").modal('hide');  
                      //var response_obj = jQuery.parseJSON(r.responseText);
                     $('#venue').append('<option value="'+(msg.id)+ '"selected="selected">'+(msg.venue_name)+'</option>');
-                    $('#kim').html ('Venue Added');
+                    $('#kim').html ('Venue Added successfully....');
 
                  },
             error: function(){
@@ -109,6 +111,6 @@ $("button#submit").click(function(){
 
 
 </script>
-  
+ 
 </body>
 </html>

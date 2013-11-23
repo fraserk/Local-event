@@ -1,3 +1,4 @@
+
 .header{
 	background:#6F2885 /*url('../img/headbg.png') repeat-x*/;
 	/*border-bottom: #000 2px solid;*/
@@ -5,6 +6,9 @@
 	padding-top:  10px;
 	height: 65px;
 
+}
+body{
+	background: #ddd url('../img/whitey.png') repeat;
 }
 
 .splash{
@@ -16,7 +20,8 @@
 	max-width: 970px;
 }
 .article{
-	background-color: #ddd;
+	
+	
 	padding-top: 20px;
 	
 }
@@ -69,9 +74,27 @@ line-height: 14pt;
 font-smooth: always;
 padding: 5px;
 }
+.footer{
+	background: #000;
+	margin-top: 30px;
+}
 .white{
 	background: #fff;
 }
 h4{
 	font-family: 'Segoe UI','Open Sans',Verdana,Arial,Helvetica,sans-serif;
 }
+
+.pac-container {
+    background-color: #FFF;
+    z-index: 20;
+    position: fixed;
+    display: inline-block;
+    float: left;
+}
+.modal{
+    z-index: 20;   
+}
+.modal-backdrop{
+    z-index: 10;        
+}​

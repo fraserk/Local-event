@@ -25,8 +25,11 @@ class EvntsController extends BaseController {
      */
     public function create()
     {
-        $venue = Venue::lists('venue_name','id');
+        $user = Auth::user()->id;
+        //$myvenue = User::find($user)->venues()->lists('venue_name','id');
+        $venue = User::find($user)->venues()->lists('venue_name','id');
         return View::make('evnts.create')->with('venues', $venue);
+        //dd($myvenue);
     }
 
     /**
