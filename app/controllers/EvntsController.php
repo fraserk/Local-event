@@ -62,7 +62,7 @@ class EvntsController extends BaseController {
         ));
 
         $venue = Venue::find(Input::get('venue'))->Evnts()->save($evnt); 
-        return  Redirect::route('upload',$venue->id)->with('message','Event Added Successfully.  Great Job');
+        return  Redirect::route('upload',$venue->slug)->with('message','Event Added Successfully.  Great Job');
     }
 
     /**
@@ -85,10 +85,10 @@ class EvntsController extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
         $venue = Venue::lists('venue_name','id');
-        $evnt = Evnt::find($id);
+        $evnt = Evnt::where('slug','=',$slug)->first();
 
         return View::make('evnts.edit')->with('evnt',$evnt)->with('venues',$venue);
     }
@@ -99,7 +99,7 @@ class EvntsController extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($slug)
     {
         //$id = Input::get('id');
          $input = Input::all();
@@ -109,16 +109,17 @@ class EvntsController extends BaseController {
        {
         return Redirect::route('evnts.create')->witherrors($v)->withinput();
        } 
-        $evnt = Evnt::find($id)->first();
+         $dt = Carbon::create(Input::get('year'), Input::get('month'), Input::get('day') , Input::get('hour'), Input::get('minute'));
+        $evnt = Evnt::where('slug','=',$slug)->first();
 
         $evnt->name = Input::get('name');
         $evnt->venue_id = Input::get('venue');
-        $evnt->when = Input::get('when');
+        $evnt->when = $dt;
         $evnt->detail = Input::get('detail');
 
         $evnt->save();
 
-        return Redirect::route('evnts.show', $id)->with('message','Event updated...');
+        return Redirect::route('evnts.show', $slug)->with('message','Event updated...');
 
 
     }
@@ -144,9 +145,9 @@ class EvntsController extends BaseController {
         return Redirect::route('dashboard')->with('message','Event Deleted...');
     }
 
-    public function GetUpload($id)
+    public function GetUpload($slug)
     {
-        $evnt = Evnt::find($id);
+        $evnt = Evnt::where('slug','=',$slug)->first();
         return View::make('evnts.upload',compact('evnt'));
     }
 
@@ -169,7 +170,7 @@ class EvntsController extends BaseController {
             $imgwidth = getimagesize(Input::file('flier'));
             $extension = Input::file('flier')->getClientOriginalExtension();
             $filename = Str_random(8) .'.' . $extension;
-            $evnt = Evnt::find($evnt_id);
+            $evnt = Evnt::where('slug','=',$evnt_id)->first();
             $evnt->flier = $filename;
             $evnt->save();  
             $destinationpath = 'uploads/'.$evnt->id ;
@@ -187,7 +188,7 @@ class EvntsController extends BaseController {
 
 
 
-            return Redirect::route('upload',$evnt_id)->with('message','file uploaded');
+            return Redirect::route('upload',$evnt->slug)->with('message','file uploaded');
         }
     }
 

@@ -1,10 +1,9 @@
 @extends('layout.template')
-	@section('head')
+@section('head')
 	<title>Get NYC Events-Upload Image</title>
 	<meta content="Get NYC Events, get infomation about local events in NYC and Brooklyn. Upload iamge" name="description">
 	@stop
 	@section('content')
-
 	<div class="row">
 			<h2>Upload a flier for your event</h2>
 
@@ -24,7 +23,7 @@
 				{{Form::label('flier','Upload a flier:',array('class'=>'control-label'))}}
 							
 					{{Form::file('flier')}}
-					{{Form::hidden('evnt_id',$evnt->id)}}
+					{{Form::hidden('evnt_id',$evnt->slug)}}
 			<br />
 					{{Form::submit('Upload File',array('class'=>'btn btn-primary'))}}
 				

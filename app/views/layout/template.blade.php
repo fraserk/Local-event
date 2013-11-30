@@ -31,7 +31,7 @@
                    @endif
                                         
                  </ul>
-                 <img src={{asset('img/letsgo.png')}} />
+                <a href="/"> <img src={{asset('img/letsgo.png')}} /></a>
     </div>
   </section>
 <section class="article wrapper">

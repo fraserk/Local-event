@@ -27,7 +27,7 @@
 							<td>{{$e->name}}</td>
 							<td>{{$e->venue->venue_name}}</td>
 							<td>{{$e->when->toDayDateTimeString()}}</td>
-							<td> <a href={{URL::route('evnts.edit',$e->id)}}><span class="glyphicon glyphicon-edit"></span></a> |<a href={{URL::route('upload',$e->id)}}><span class="glyphicon glyphicon-upload"></span></a>|</span><a href={{URL::route('remove',$e->slug) }}><span class="glyphicon glyphicon-trash"></span><a/></td>
+							<td> <a href={{URL::route('evnts.edit',$e->slug)}}><span class="glyphicon glyphicon-edit"></span></a> |<a href={{URL::route('upload',$e->id)}}><span class="glyphicon glyphicon-upload"></span></a>|</span><a href={{URL::route('remove',$e->slug) }}><span class="glyphicon glyphicon-trash"></span><a/></td>
 
 						</tr>
 					@endforeach	
