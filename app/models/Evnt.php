@@ -9,6 +9,10 @@ class Evnt extends Eloquent {
       'admission' => 'required',
       'detail' => 'required'
     	);
+   public static $sluggable = array(
+        'build_from' => 'name',
+        'save_to'    => 'slug',
+    );
 
    public function getDates(){
     return['created_ad','updated_at','deleted_at','when'];

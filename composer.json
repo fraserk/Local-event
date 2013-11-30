@@ -5,7 +5,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"way/generators": "dev-master",
-		"intervention/image": "dev-master"
+		"intervention/image": "dev-master",
+		 "cviebrock/eloquent-sluggable": "1.0.*"
 		
 	},
 	"autoload": {

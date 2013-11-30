@@ -115,6 +115,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		
 		
 
@@ -184,6 +185,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Image' 			=> 'Intervention\Image\Facades\Image',
 		'Carbon'		  => 'Carbon\Carbon',
+		'Sluggable' => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 	
 		
 

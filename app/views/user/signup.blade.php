@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-5 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h2>Sign-up</h2> </div>
 						
@@ -35,7 +35,7 @@
 						</div>
 							<div class='panel-footer'>
 								
-								{{ Form::submit('Submit',array('class'=>'btn btn-primary')) }}
+								{{ Form::submit('Submit',array('class'=>'btn btn-primary')) }} {{link_to_route('login','Login')}}
 							</div>
 						{{ Form::close() }}
 					

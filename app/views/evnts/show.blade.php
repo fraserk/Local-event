@@ -3,7 +3,7 @@
 	@section('content')
 		
 	<div class="row">
-
+@if (count($evnt)>0)
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-heading">{{$evnt->name}} </div>
@@ -36,5 +36,9 @@
 				</div>				
 		</div>
 	</div>
+	@else
+	
+	Invalid Event ID..
+	@endif
 	
 	@stop

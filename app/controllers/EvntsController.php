@@ -10,7 +10,7 @@ class EvntsController extends BaseController {
 
     public function __construct()
     {
-        $this->beforefilter('auth', array('only'=>array('create','store','edit','update','destroy')));
+        $this->beforefilter('auth', array('except'=>array('index','show')));
     }
     public function index()
     {
@@ -71,11 +71,11 @@ class EvntsController extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $evnt = Evnt::find($id);
-
-        return View::make('evnts.show')->with('evnt',$evnt);
+        $evnt = Evnt::where('slug','=',$slug)->first();
+        //return $evnt;
+        return View::make('evnts.show',compact('evnt'));
        //return dd($evnt->when->diffforhumans());
     }
 
@@ -129,9 +129,16 @@ class EvntsController extends BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function remove($slug)
+    {   
+        $evnt = Evnt::where('slug','=',$slug)->first();
+        //return Redirect::route('remove',compact('evnt'));
+        return View::make('evnts.destroy',compact('evnt'));
+
+    }
+    public function destroy($slug)
     {
-        $evnt = Evnt::find($id);
+        $evnt = Evnt::where('slug','=',$slug)->first();
         $evnt->delete();
 
         return Redirect::route('evnts.index')->with('message','Event soft Deleted...');

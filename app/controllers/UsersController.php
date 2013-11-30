@@ -33,7 +33,7 @@ class UsersController extends BaseController {
 			return Redirect::intended('dashboard');
 		}
 
-		return Redirect::route('login')->withInput();
+		return Redirect::route('login')->withInput()->with('message','Error: Username/Password incorrect');
 	}
 
 	/**

@@ -18,7 +18,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('evnts.index');
 });
 
 route::get('evnts/upload/{id}',array('as'=>'upload','uses'=> 'EvntsController@GetUpload'));
@@ -27,6 +27,7 @@ route::get('/dashboard',array('as'=>'dashboard', 'uses'=>'UsersController@dashbo
 Route::get('user/login',array('as'=>'login','uses'=>'UsersController@login'));
 Route::get('user/logout',array('as'=>'logout','uses'=>'UsersController@destroy'));
 Route::post('user/loginck',array('as'=>'loginck','uses'=>'UsersController@loginck'));
+Route::get('evnts/remove/{slug}',['as'=>'remove','uses'=>'EvntsController@remove']);
 Route::resource('evnts', 'EvntsController');
 Route::resource( 'user', 'UsersController');
 

@@ -34,18 +34,15 @@
                  <img src={{asset('img/letsgo.png')}} />
     </div>
   </section>
-<section class="article">
+<section class="article wrapper">
   <div class="container">
                   
-                              @if(Session::has('message'))
-                                          {
-                                          {{Session::get('message')}}
-                                      }
-                                      @endif
+                              
                                           @yield('content')
               
            <!-- End of Body -->
   </div>
+   <div class="push"><!--//--></div>
 </section>
 
 <section class="footer">

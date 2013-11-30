@@ -6,14 +6,13 @@
 		<div class="col-md-5 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3>Please Login.</h3> </div>
-							<div class="{{$errors->has('email')? 'alert alert-warning' : ''}}">{{$errors->first('email') }}</div>
 						{{ Form::open(array('route' => 'loginck','class'=>'form-horizontal','role'=>'form')) }}
 			
 				<div class="panel-body">
 
 				<div class="form-group">
-				<div class="col-xs-8">
-					
+				<div class="col-xs-10">
+					<div class="{{Session::has('message')? 'alert alert-warning' : ''}}">{{Session::get('message')}}</div>
 					<div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 						{{ Form::text('username',null,['class'=>'form-control']) }}
@@ -21,7 +20,7 @@
 				</div>
 				</div>
 				<div class="form-group">
-				<div class='col-xs-8'>
+				<div class='col-xs-10'>
 					
 					<div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>

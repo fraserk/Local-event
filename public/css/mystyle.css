@@ -7,8 +7,9 @@
 	height: 65px;
 
 }
-body{
+html,body{
 	background: #ddd url('../img/whitey.png') repeat;
+	height: 100%;
 }
 
 .splash{
@@ -74,13 +75,20 @@ line-height: 14pt;
 font-smooth: always;
 padding: 5px;
 }
-.footer{
-	background: #000;
-	margin-top: 30px;
+
+.footer {
+background-color: #000;
+border-top: 1px solid #e5e5e5;
+font-family: 'Segoe UI Semilight','Open Sans',Verdana,Arial,Helvetica,sans-serif;
+font-weight: 300;
+font-size: 0.75em;
+letter-spacing: 0.02em;
+line-height: 14pt;
+font-smooth: always;
+padding: 5px;
 }
-.white{
-	background: #fff;
-}
+
+
 h4{
 	font-family: 'Segoe UI','Open Sans',Verdana,Arial,Helvetica,sans-serif;
 }
@@ -98,3 +106,32 @@ h4{
 .modal-backdrop{
     z-index: 10;        
 }​
+
+        
+        .footer
+         {
+            color: #666;
+            background: #ffffff;
+            padding: 17px 0 18px 0;
+            border-top: 1px solid #000;    
+        }
+        .footer a {
+            color: #999;
+        }
+        .footer a:hover {
+            color: #000;
+        }
+        .wrapper {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -63px;
+        }
+        .push {
+            height: 63px;
+        }
+        /* not required for sticky footer; just pushes hero down a bit */
+        .wrapper > .container {
+            padding-top: 20px;
+        }
+ 

@@ -25,7 +25,7 @@
 					         
 					    
 						    <div class="caption">
-						                            <h4>{{HTML::linkroute('evnts.show', Str::Limit($e->name,$limit=14, $end ='..'),$e->id)}} </h4>
+						                            <h4>{{HTML::linkroute('evnts.show', Str::Limit($e->name,$limit=14, $end ='..'),$e->slug)}} </h4>
 						                            
 						                           
 						                            <p>{{Str::Limit($e->detail,$limit=45,$end='...')}}</p>
