@@ -8,11 +8,11 @@
 <head>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>GOING...</title>
-
+  @yield('head')
       {{HTML::style('css/bootstrap.css')}}
       {{HTML::style('css/mystyle.css')}}
       {{HTML::style('css/bootstrap-timepicker.css')}}
+
 
 
   <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>

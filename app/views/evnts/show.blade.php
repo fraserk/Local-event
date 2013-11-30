@@ -1,5 +1,10 @@
 @extends('layout.template')
-
+	
+	@section('head')
+	<title>Get NYC Events-{{count($evnt)>0 ? $evnt->name :'Invalid Event ID' }}</title>
+	<meta content="Get NYC Events, get infomation about local events in NYC and Brooklyn" name="description">
+	@stop
+	
 	@section('content')
 		
 	<div class="row">

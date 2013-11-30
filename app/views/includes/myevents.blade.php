@@ -5,7 +5,7 @@
 		<div class="tab-pane active" id="home">
 
 			<br />
-				<table class="table table-striped  table-condensed table-hover">
+				@if (count($evnts))	<table class="table table-striped  table-condensed table-hover">
 					<thead>
 						<tr style="font-weight:bold">
 							<td>ID</td>
@@ -19,7 +19,7 @@
 
 					</thead>
 					<tbody>
-					@if (count($evnts))	
+					
 						@foreach($evnts as $e)
 					
 						<tr>

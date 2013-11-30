@@ -10,10 +10,10 @@
         	 
 
         	 <ul class="nav nav-tabs" id="myTab">
-          <li class="active"><a href="#home">Home</a></li>
-          <li><a href="#rsvp">Profile</a></li>
+          <li class="active"><a href="#home">Events</a></li>
+         <!--  <li><a href="#rsvp">Profile</a></li>
           <li><a href="#messages">Messages</a></li>
-          <li><a href="#settings">Settings</a></li>
+          <li><a href="#settings">Settings</a></li> -->
         </ul>
 
         <div class="tab-content">

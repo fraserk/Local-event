@@ -141,7 +141,7 @@ class EvntsController extends BaseController {
         $evnt = Evnt::where('slug','=',$slug)->first();
         $evnt->delete();
 
-        return Redirect::route('evnts.index')->with('message','Event soft Deleted...');
+        return Redirect::route('dashboard')->with('message','Event Deleted...');
     }
 
     public function GetUpload($id)

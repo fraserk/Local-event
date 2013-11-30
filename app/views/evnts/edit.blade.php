@@ -1,9 +1,14 @@
 @extends('layout.template')
+
+  @section('head')
+  <title>Get NYC Events-{{count($evnt)>0 ? $evnt->name :'Invalid Event ID' }}</title>
+  <meta content="Get NYC Events, get infomation about local events in NYC and Brooklyn" name="description">
+  @stop
     @section('content')
 
 
     <div class="row">
-
+@if (count($evnt)>0)
         <div class="panel panel-default">
           <div class="panel-heading"><h2>Edit Event</h2> </div>
            {{ Form::model($evnt,array('route' => array('evnts.update',$evnt->id),'method'=>'PUT','class'=>'form-horizontal','role'=>'form')) }}
@@ -30,7 +35,10 @@
 
 
  @include('venues.create')
-
+@else
+  
+  Invalid Event ID..
+  @endif
     @stop
 
 
