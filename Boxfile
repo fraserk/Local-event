@@ -3,7 +3,7 @@ global:
     - LARAVEL_ENV: production
     
 #db1:
-  name: getnycevents
+  name: getnycevent
   type: mysql
 cache1:
   type: memcached
