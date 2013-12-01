@@ -3,12 +3,12 @@ global:
     - LARAVEL_ENV: production
     
 #db1:
-  name: getnycevent
+  name: getevents
   type: mysql
 cache1:
   type: memcached
 web1:
-  name: getnycevents
+  name: getevents
   shared_writable_dirs:
     - /storage/cache
     - /storage/database
