@@ -8,7 +8,7 @@ global:
 cache1:
   type: memcached
 web1:
-  name: getnycevents
+  name: nyeevents
   shared_writable_dirs:
     - /storage/cache
     - /storage/logs
