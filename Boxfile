@@ -3,20 +3,19 @@ global:
     - LARAVEL_ENV: production
     
 #db1:
-  name: getevents
+  name: getevent
   type: mysql
 cache1:
   type: memcached
 web1:
-  name: getevents
+  name: getnycevents
   shared_writable_dirs:
     - /storage/cache
-    - /storage/database
     - /storage/logs
     - /storage/sessions
     - /storage/views
     - /storage/work
-    - /storage/meta/services
+    - /storage/meta
   document_root: /public
   php_version: 5.3.8
   php_extensions:
@@ -26,9 +25,7 @@ web1:
     - memcached
     - mysqli
   before_deploy:
-  
+   
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
-    - "rm -f storage/meta/*"
-
