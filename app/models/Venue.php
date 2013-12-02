@@ -11,6 +11,6 @@ class Venue extends Eloquent {
 
     public function User()
     {
-    	return $this->belongsto('user');
+    	return $this->belongsto('User');
     }
 }

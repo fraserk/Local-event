@@ -23,7 +23,7 @@ class Evnt extends Eloquent {
    }
 
    public function User(){
-   	return $this->BelongsTo('user');
+   	return $this->BelongsTo('User');
    }
 }
 
