@@ -16,10 +16,8 @@
 // 	var_dump($sql);
 // });
 
-Route::get('/', function()
-{
-	return View::make('evnts.index');
-});
+
+Route::get('/', 'EvntsController@index');
 
 route::get('evnts/upload/{id}',array('as'=>'upload','uses'=> 'EvntsController@GetUpload'));
 route::post('/upload',array('as'=>'postupload','uses'=> 'EvntsController@PostUpload'));
@@ -33,7 +31,7 @@ Route::resource( 'user', 'UsersController');
 
 Route::get('password_reset/reset/{token}','PasswordResetController@reset');
 Route::post('password_reset/reset/{token}','PasswordResetController@Postreset');
-Route::resource('venues', 'VenuesController');
+Route::resource('venues', 'VenuesController',array('except'=>array('store')));
 Route::resource('password_reset','PasswordResetController');
 
 // Cabinet routes

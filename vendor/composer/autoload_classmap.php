@@ -11,6 +11,7 @@ return array(
     'AddPhoneToVenues' => $baseDir . '/app/database/migrations/2013_11_21_162012_add_phone_to_venues.php',
     'AddSlugToEvnts' => $baseDir . '/app/database/migrations/2013_11_24_185502_add_slug_to_evnts.php',
     'AddSoftdeleteToEvnts' => $baseDir . '/app/database/migrations/2013_06_08_184813_add_softdelete_to_evnts.php',
+    'AddUserIdToEvnts' => $baseDir . '/app/database/migrations/2013_12_02_155634_add_user_id_to_evnts.php',
     'AddUserIdToVenues' => $baseDir . '/app/database/migrations/2013_11_21_030713_add_user_id_to_venues.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',

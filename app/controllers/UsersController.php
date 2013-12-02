@@ -7,7 +7,10 @@ class UsersController extends BaseController {
 	 *
 	 * @return Response
 	 */
-
+	public function missingMethod($parameters)
+	{
+	    return Redirect::to('/');
+	}
 	public function dashboard()
 	{
        // return View::make('user.login');

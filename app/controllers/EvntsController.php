@@ -7,11 +7,18 @@ class EvntsController extends BaseController {
      *
      * @return Response
      */
-
-    public function __construct()
+ public function __construct()
     {
         $this->beforefilter('auth', array('except'=>array('index','show')));
     }
+    
+
+
+    public function missingMethod($parameters)
+    {
+        return Redirect::to('/');
+    }
+   
     public function index()
     {
         $evnts = Evnt::with('venue')->paginate(20);
