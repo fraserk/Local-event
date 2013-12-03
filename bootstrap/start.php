@@ -29,6 +29,7 @@ $app->redirectIfTrailingSlash();
 $env = $app->detectEnvironment(array(
 
 	'development' => array('localhost'),
+	'staging' => array('http://getnycevents.eu1.frbit.net'),
 
 ));
 

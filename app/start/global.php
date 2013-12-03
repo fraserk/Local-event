@@ -57,7 +57,7 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
   App::error(function($exception, $code)
 {
 	Log::error($exception);
-	
+
     switch ($code)
     {
         

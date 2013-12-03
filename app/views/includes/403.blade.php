@@ -1,5 +1,9 @@
 @extends('layout.template')
+@section('head')
+  <title>Get NYC Events - error</title>
+  <meta content="Get NYC Events, get infomation about local events in NYC and Brooklyn. Create a Local Event" name="description">
 
+@stop
 @section('content')
 <div class="row">
 <div class="panel panel-default">
