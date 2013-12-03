@@ -9,7 +9,7 @@ class UsersController extends BaseController {
 	 */
 	public function missingMethod($parameters)
 	{
-	    return Redirect::to('/');
+	    return Redirect::route('home');
 	}
 	public function dashboard()
 	{

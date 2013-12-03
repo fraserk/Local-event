@@ -35,12 +35,16 @@
 
 
  @include('venues.create')
- @include('inclues.evnt_js')
+
 @else
   
   Invalid Event ID..
   @endif
     @stop
+       
+ @section('footer')
+ @include('inclues.evnt_js')
+ @stop
 
 
 

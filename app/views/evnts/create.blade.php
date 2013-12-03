@@ -34,7 +34,11 @@
 
 
  @include('venues.create')
+   @stop
+   
+ @section('footer')
  @include('inclues.evnt_js')
+ @stop
 
-    @stop
+  
 
