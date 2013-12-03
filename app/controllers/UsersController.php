@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 class UsersController extends BaseController {
 
@@ -61,7 +61,7 @@ class UsersController extends BaseController {
 		$v = Validator::make($input, User::$rules);
 		If ($v->fails())
 		{
-			return Redirect::route('user.create')->witherrors($v);
+			return Redirect::route('user.create')->witherrors($v)->withInput();
 		}
 		$user = new User;
 		$user->username = Input::get('username');

@@ -15,7 +15,7 @@
 
 		if ($v->fails())
 		{
-			return Redirect::route('password_reset.create')->witherrors($v);
+			return Redirect::route('password_reset.create')->witherrors($v)->withInput();
 		}
 
 		$credentials = array('email' => Input::get('email'));

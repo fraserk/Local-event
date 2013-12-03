@@ -26,7 +26,7 @@ return array(
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
     'CreateEvntsTable' => $baseDir . '/app/database/migrations/2013_06_03_232103_create_evnts_table.php',
-    'CreatePasswordRemindersTable' => $baseDir . '/app/database/migrations/2013_11_23_034339_create_password_reminders_table.php',
+    'CreatePasswordRemindersTable' => $baseDir . '/app/database/migrations/2013_12_03_030409_create_password_reminders_table.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2013_10_14_023939_create_users_table.php',
     'CreateVenuesTable' => $baseDir . '/app/database/migrations/2013_09_01_153931_create_venues_table.php',
     'Cviebrock\\EloquentSluggable\\Facades\\Sluggable' => $vendorDir . '/cviebrock/eloquent-sluggable/src/Cviebrock/EloquentSluggable/Facades/Sluggable.php',

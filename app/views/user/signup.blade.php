@@ -18,14 +18,14 @@
 							<div class="form-group">
                   				<div class="col-xs-12"> 
 								{{ Form::label('username', 'Username:',array('class'=>'control-label')) }}
-								{{ Form::text('username','',array('class'=>'form-control')) }}
+								{{ Form::text('username',null,array('class'=>'form-control')) }}
 								</div>
 							</div>
 
 							<div class="form-group">
                   				<div class="col-xs-12"> 
 								{{ Form::label('email', 'Email:',array('class'=>'control-label')) }}
-								{{ Form::text('email','',array('class'=>'form-control')) }}
+								{{ Form::text('email',null,array('class'=>'form-control')) }}
 								</div>
 							</div>
 

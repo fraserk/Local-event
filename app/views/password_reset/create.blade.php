@@ -1,8 +1,9 @@
 @extends('layout.template')
 @section('head')
-	<title>Get NYC Events-Password Reminder/title>
+	<title>Get NYC Events-Password Reminder</title>
 	<meta content="Get NYC Events, get infomation about local events in NYC and Brooklyn. Upload iamge" name="description">
 	@stop
+
 	@section('content')
 	<div class="row">
 

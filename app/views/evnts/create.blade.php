@@ -34,6 +34,7 @@
 
 
  @include('venues.create')
+ @include('inclues.evnt_js')
 
     @stop
 
