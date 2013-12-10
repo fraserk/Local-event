@@ -11,6 +11,7 @@ cache1:
 web1:
   name: early-emmaline
   shared_writable_dirs:
+  
     - /storage/meta
     - /storage/cache
     - /storage/database
