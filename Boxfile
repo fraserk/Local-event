@@ -25,7 +25,7 @@ web1:
     - eaccelerator
     - memcached
     - mysqli
-    - cURL
+    - curl
   before_deploy:
     - "php artisan migrate"
   after_deploy:
