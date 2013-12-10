@@ -11,13 +11,14 @@ cache1:
 web1:
   name: early-emmaline
   shared_writable_dirs:
+    - /storage/meta
     - /storage/cache
     - /storage/database
     - /storage/logs
     - /storage/sessions
     - /storage/views
     - /storage/work
-    - /storage
+    
   document_root: /public
   php_version: 5.3.23
   php_extensions:
