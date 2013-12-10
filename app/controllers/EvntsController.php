@@ -182,6 +182,8 @@ class EvntsController extends BaseController {
             $evnt->save();  
             $destinationpath = 'uploads/'.$evnt->id ;
             Input::file('flier')->move($destinationpath,$filename);
+            $tags = 'kim';
+            Cloudy::upload($destinationpath .'/' .$filename,'blah',$tags);
 
             if($imgwidth[0] > '340') //resize image if its bigger than 350 px
             {

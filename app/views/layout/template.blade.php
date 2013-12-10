@@ -21,13 +21,13 @@
   <section class="header"> 
     <div class="container">                           
                 <ul class="nav nav-pills pull-right">
-                    <li class="active">{{HTML::linkroute('evnts.index','Home')}}</li>
-                    <li class="">{{HTML::linkroute('evnts.create','Post Event')}}</li>
+                  <li class={{setactive('/')}}>{{HTML::linkroute('home','Home')}}</li>
+                    <li class="{{setactive('evnts/create')}}">{{HTML::linkroute('evnts.create','Post Event')}}</li>
                    @if(Auth::check())
                     <li class="">{{HTML::linkroute('logout','Log-out')}}</li>
-                    <li class="">{{HTML::linkroute('dashboard','My account')}}</li>
+                    <li class="{{setactive('dashboard')}}">{{HTML::linkroute('dashboard','My account')}}</li>
                    @else
-                   <li class="">{{HTML::linkroute('login','Login')}}</li>
+                   <li class="{{setactive('user/login')}}">{{HTML::linkroute('login','Login')}}</li>
                    @endif
                                         
                  </ul>
@@ -80,7 +80,7 @@
 
 // </script>
 
-@yield('footer')
+@yield('footer') 
 
 
  

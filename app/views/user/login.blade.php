@@ -18,7 +18,7 @@
 					<div class="{{Session::has('message')? 'alert alert-warning' : ''}}">{{Session::get('message')}}</div>
 					<div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-						{{ Form::text('username',null,['class'=>'form-control']) }}
+						{{ Form::text('username',null,['class'=>'form-control','placeholder'=>'Username']) }}
 					</div>
 				</div>
 				</div>
@@ -27,7 +27,7 @@
 					
 					<div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-				{{ Form::password('password',['class'=>'form-control']) }}
+				{{ Form::password('password',['class'=>'form-control','placeholder'=>'Password']) }}
 				</div>
 			</div>
 					</div>

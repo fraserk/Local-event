@@ -31,11 +31,12 @@ class UsersController extends BaseController {
 		
 		$username = Input::get('username');
 		$password = Input::get('password');
+
 		if (Auth::attempt(array('username'=> $username,'password'=> $password)))
 		{
 			return Redirect::intended('dashboard');
 		}
-
+		
 		return Redirect::route('login')->withInput()->with('message','Error: Username/Password incorrect');
 	}
 

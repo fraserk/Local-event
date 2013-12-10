@@ -15,7 +15,7 @@ class CreateEvntsTable extends Migration {
         Schema::create('evnts', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-			$table->string('venue');
+			$table->integer('venue_id');
 			$table->datetime('when');
 			$table->text('detail');
             $table->timestamps();

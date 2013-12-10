@@ -7,7 +7,10 @@
 		"laravel/framework": "4.0.*",
 		"way/generators": "dev-master",
 		"intervention/image": "dev-master",
-		 "cviebrock/eloquent-sluggable": "1.0.*"
+		 "cviebrock/eloquent-sluggable": "1.0.*",
+		 "frozennode/administrator": "dev-master",
+		 "cloudinary/cloudinary_php": "dev-master",
+		 "teepluss/cloudinary": "dev-master"
 		
 	},
 	"autoload": {
@@ -18,8 +21,11 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"files": ["app/helpers.php"]
 	},
+
+
 	"scripts": {
 		"pre-update-cmd": [
 			"php artisan clear-compiled"

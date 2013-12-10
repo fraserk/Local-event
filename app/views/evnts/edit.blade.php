@@ -41,9 +41,9 @@
   Invalid Event ID..
   @endif
     @stop
-       
+
  @section('footer')
- @include('inclues.evnt_js')
+ @include('includes.evnt_js')
  @stop
 
 

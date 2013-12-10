@@ -2,7 +2,18 @@
 
 Easy creation of slugs for your Eloquent models in Laravel 4.
 
+* [Background](#background)
+* [Installation](#installation)
+* [Updating your Eloquent Models](#eloquent)
+* [Using the Class](#usage)
+* [Integration with Ardent](#ardent)
+* [Configuration](#config)
+* [Bugs, Suggestions and Contributions](#bugs)
+* [Copyright and License](#copyright)
 
+
+
+<a name="background"></a>
 ## Background: What is a slug?
 
 A slug is a simplified version of a string, typically URL-friendly.  The act of "slugging" a string usually
@@ -43,6 +54,8 @@ The **Eloquent-Sluggable** package for Laravel 4 will handle all of this for you
 minimal configuration at the start.
 
 
+
+<a name="installation"></a>
 ## Installation
 
 First, you'll need to add the package to the `require` attribute of your `composer.json` file:
@@ -57,15 +70,39 @@ First, you'll need to add the package to the `require` attribute of your `compos
 
 Aftwards, run `composer update` from your command line.
 
-Then, add `'Cviebrock\EloquentSluggable\SluggableServiceProvider',` to the list of service providers in `app/config/app.php`
-and add `'Sluggable' => 'Cviebrock\EloquentSluggable\Facades\Sluggable'` to the list of class aliases in `app/config/app.php`.
+Then, update `app/config/app.php` by adding entries for the service providers and class aliases:
 
-From the command line again, run `php artisan config:publish cviebrock/eloquent-sluggable`.
+```php
+
+	'providers' => array(
+
+		// ...
+
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+
+	);
+
+	// ...
+
+	'aliases' => array(
+
+		// ...
+
+		'Sluggable' => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
+
+	);
 
 
+```
+
+Finally, from the command line again, run `php artisan config:publish cviebrock/eloquent-sluggable` to publish the configuration file.
+
+
+
+<a name="eloquent"></a>
 ## Updating your Eloquent Models
 
-Define a public property `$sluggable` with the definitions (see [#Configuration] below for details):
+Define a public property `$sluggable` with the definitions (see [Configuration](#config) below for details):
 
 ```php
 class Post extends Eloquent
@@ -82,13 +119,15 @@ class Post extends Eloquent
 That's it ... your model is now "sluggable"!
 
 
+
+<a name="usage"></a>
 ## Using the Class
 
 Saving a model is easy:
 
 ```php
 $post = new Post(array(
-	'title'    => 'My Awesome Blog Post'
+	'title' => 'My Awesome Blog Post'
 ));
 
 $post->save();
@@ -102,6 +141,66 @@ echo $post->slug;
 
 
 
+<a name="ardent"></a>
+## Integration with Ardent
+
+[Ardent](//github.com/laravelbook/ardent) is a package that "provides self-validating smart models for Laravel Framework 4's Eloquent ORM".  You can configure your Ardent models to include built-in validator rules, and Ardent will handle all the hard work for you.
+
+Unfortunately, the `eloquent.saving` hook that Sluggable relies on to generate slugs doesn't get fired before Ardent does it's validation.  So, imagine your Ardent model looks like this:
+
+```php
+class Post extends Ardent {
+
+	/**
+	 * Ardent rules
+	 */
+	public static $rules = array(
+		'title' => 'required',
+		'slug'  => 'required|unique'
+	);
+
+	/**
+	 * Sluggable config
+	 */
+	public static $sluggable = array(
+		'build_from' => 'title',
+		'save_to'    => 'slug',
+	);
+
+}
+```
+
+When you go to save the model, you'll get a validation error:
+
+> Slug field required
+
+There are three ways around this:
+
+1. Don't specify rules for your slug attribute with Ardent.  Sluggable will handle the generation and unique checks for you.
+
+2. Create a `beforeValidate` method in your model that generates the slug first:
+
+	```php
+	public function beforeValidate()
+	{
+		\Sluggable::make($this,true);
+	}
+	```
+
+3. Manually generate the slug before saving:
+
+	```php
+	$post = new Post(...);
+
+	Sluggable::make($post,true);
+	$post->save();
+	```
+
+The second option above is likely the most elegant.  If you have your own BaseModel class that extends Ardent, then just put the `beforeValidate()` method in there and you should be good to go!
+
+
+
+<a name="config"></a>
 ## Configuration
 
 Configuration was designed to be as flexible as possible.  You can set up defaults for all of your Eloquent models, and then override those settings for individual models.
@@ -158,17 +257,17 @@ Schema::create('posts', function($table)
 
 2. When `method` is a callable, then that function or class method is used.  The function/method should expect two parameters: the string to process, and a separator string.  For example, to duplicate the default behaviour, you could do:
 
-```php
-	'method' => array('Illuminate\Support\Str','slug'),
-```
+	```php
+		'method' => array('Illuminate\Support\Str','slug'),
+	```
 
 3. You can also define `method` as a closure (again, expecting two parameters):
 
-```php
-	'method' => function( $string, $separator ) {
-		return strtolower( preg_replace('/[^a-z]+/i', $separator, $string) );
-	},
-```
+	```php
+		'method' => function( $string, $separator ) {
+			return strtolower( preg_replace('/[^a-z]+/i', $separator, $string) );
+		},
+	```
 
 Any other values for `method` will throw an exception.
 
@@ -187,6 +286,8 @@ By turning `unique` on, then the second Post model will sluggify to "my-blog-pos
 `reserved` is an array of values that will never be allowed as slugs, e.g. to prevent collisions with existing routes or controller methods, etc..  This can be an array, or a closure that returns an array.  Defaults to `null`: no reserved slug names.
 
 
+
+<a name="bugs"></a>
 ## Bugs, Suggestions and Contributions
 
 Please use Github for bugs, comments, suggestions.
@@ -203,6 +304,8 @@ Please use Github for bugs, comments, suggestions.
 **Please note that you must create your pull request against the `develop` branch.**
 
 
+
+<a name="copyright"></a>
 ## Copyright and License
 
 Eloquent-Sluggable was written by Colin Viebrock and released under the MIT License. See the LICENSE file for details.

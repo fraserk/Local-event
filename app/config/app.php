@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -116,6 +116,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Frozennode\Administrator\AdministratorServiceProvider',
+		'Teepluss\Cloudinary\CloudinaryServiceProvider',
 		
 		
 
@@ -186,6 +188,7 @@ return array(
 		'Image' 			=> 'Intervention\Image\Facades\Image',
 		'Carbon'		  => 'Carbon\Carbon',
 		'Sluggable' => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
+		'Cloudy' => 'Teepluss\Cloudinary\Facades\Cloudy',
 	
 		
 

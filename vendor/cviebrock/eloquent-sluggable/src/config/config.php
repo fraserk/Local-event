@@ -70,7 +70,7 @@ return array(
 	 * If set to "false", then a new slug could duplicate one that exists on a trashed model.
 	 * If set to "true", then uniqueness is enforced across trashed and existing models.
 	 */
-	'include_trashed' => true,
+	'include_trashed' => false,
 
 	/**
 	 * Whether to update the slug value when a model is being
