@@ -26,6 +26,7 @@ web1:
     - memcached
     - mysqli
     - curl
+    
     - gd
   before_deploy:
     - "php artisan migrate"
