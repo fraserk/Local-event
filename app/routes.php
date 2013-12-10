@@ -14,7 +14,7 @@
 
 
 
-Route::get('/', ['as'=>'home','uses'=>'EvntsController@index']);
+Route::get('/', array('as'=>'home','uses'=>'EvntsController@index'));
 
 route::get('evnts/upload/{id}',array('as'=>'upload','uses'=> 'EvntsController@GetUpload'));
 route::post('/upload',array('as'=>'postupload','uses'=> 'EvntsController@PostUpload'));
