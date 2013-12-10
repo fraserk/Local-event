@@ -1,3 +1,4 @@
+
 global:
   env:
     - LARAVEL_ENV: production
@@ -29,3 +30,5 @@ web1:
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
+  after_build:
+    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --prefer-source"

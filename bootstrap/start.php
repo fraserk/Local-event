@@ -28,8 +28,9 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
+
 	'development' => array('localhost'),
-	'staging' => array('http://getnycevents.eu1.frbit.net'),
+	'staging' => array('http://early-emmaline.gopagoda.com/'),
 
 ));
 
@@ -51,7 +52,11 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 | Load The Application
 |--------------------------------------------------------------------------
 |
+<<<<<<< HEAD
 | Here we will load the Illuminate application. We'll keep this is in a
+=======
+| Here we will load this Illuminate application. We will keep this in a
+>>>>>>> 0f6a4969dbfcf20639d63623540c03401df34d2a
 | separate location so we can isolate the creation of an application
 | from the actual running of the application with a given request.
 |

@@ -13,7 +13,9 @@ return array(
 	|
 	*/
 
+
 	'debug' => false,
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +28,9 @@ return array(
 	|
 	*/
 
-	'url' => 'http://getnycevents.eu1.frbit.net',
+
+	'url' => 'http://early-emmaline.gopagoda.com/',
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -60,12 +64,14 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| This key is used by the Illuminate encrypter service and should be set
+<<<<<<< HEAD
 	| to a random, long string, otherwise these encrypted values will not
 	| be safe. Make sure to change it before deploying any application!
 	|
 	*/
 
 	'key' => 'ShesTxxy7WCVM3Io3LLCLzPEDU4hHSqQ',
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,6 +85,7 @@ return array(
 	*/
 
 	'providers' => array(
+
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
@@ -113,6 +120,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+
 		'Way\Generators\GeneratorsServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
@@ -120,6 +128,7 @@ return array(
 		'Teepluss\Cloudinary\CloudinaryServiceProvider',
 		
 		
+
 
 	),
 
@@ -185,12 +194,13 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
 		'Image' 			=> 'Intervention\Image\Facades\Image',
 		'Carbon'		  => 'Carbon\Carbon',
 		'Sluggable' => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
 		'Cloudy' => 'Teepluss\Cloudinary\Facades\Cloudy',
 	
-		
+
 
 	),
 

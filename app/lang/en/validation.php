@@ -19,6 +19,7 @@ return array(
 	"alpha"            => "The :attribute may only contain letters.",
 	"alpha_dash"       => "The :attribute may only contain letters, numbers, and dashes.",
 	"alpha_num"        => "The :attribute may only contain letters and numbers.",
+
 	"before"           => "The :attribute must be a date before :date.",
 	"between"          => array(
 		"numeric" => "The :attribute must be between :min - :max.",
@@ -41,6 +42,7 @@ return array(
 		"numeric" => "The :attribute may not be greater than :max.",
 		"file"    => "The :attribute may not be greater than :max kilobytes.",
 		"string"  => "The :attribute may not be greater than :max characters.",
+
 	),
 	"mimes"            => "The :attribute must be a file of type: :values.",
 	"min"              => array(
@@ -60,6 +62,8 @@ return array(
 		"numeric" => "The :attribute must be :size.",
 		"file"    => "The :attribute must be :size kilobytes.",
 		"string"  => "The :attribute must be :size characters.",
+
+
 	),
 	"unique"           => "The :attribute has already been taken.",
 	"url"              => "The :attribute format is invalid.",

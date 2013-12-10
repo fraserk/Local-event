@@ -28,6 +28,7 @@ return array(
 	|
 	*/
 
+
 	'host' => 'smtp.gmail.com',
 
 	/*
@@ -54,7 +55,9 @@ return array(
 	|
 	*/
 
+
 	'from' => array('address' => 'kimfraser@gmail.com', 'name' => 'kim fraser'),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +83,9 @@ return array(
 	|
 	*/
 
+
 	'username' => 'kimf@mmfsnyc.org',
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +98,9 @@ return array(
 	|
 	*/
 
+
 	'password' => 'lauren1257',
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -107,5 +114,6 @@ return array(
 	*/
 
 	'sendmail' => '/usr/sbin/sendmail -bs',
+
 
 );

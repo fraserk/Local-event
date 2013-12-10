@@ -11,10 +11,7 @@
 |
 */
 
-// Event::listen('illuminate.query', function($sql)
-// {
-// 	var_dump($sql);
-// });
+
 
 
 Route::get('/', ['as'=>'home','uses'=>'EvntsController@index']);

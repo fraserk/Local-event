@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # www.robotstxt.org/
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
+=======
+User-agent: *
+Disallow: 
+>>>>>>> 0f6a4969dbfcf20639d63623540c03401df34d2a

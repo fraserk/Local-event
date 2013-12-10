@@ -48,6 +48,7 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 |
 */
 
+
 // App::error(function(Exception $exception, $code)
 // {
 	
@@ -73,6 +74,7 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
         // default:
         //     return Response::view('includes.default', array(), $code);
     }
+
 });
 
 /*

@@ -12,6 +12,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
+
 	public static $rules = [
 					'username' => 'required|unique:users|min:3',
 					'email' =>	  'required|unique:users|email',
@@ -28,6 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->hasMany('Venue');
 	}
+
 
 	/**
 	 * The attributes excluded from the model's JSON form.

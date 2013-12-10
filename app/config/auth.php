@@ -8,7 +8,11 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| This option controls the authentication driver that will be utilized.
+<<<<<<< HEAD
 	| This drivers manages the retrieval and authentication of the users
+=======
+	| This driver manages the retrieval and authentication of the users
+>>>>>>> 0f6a4969dbfcf20639d63623540c03401df34d2a
 	| attempting to get access to protected areas of your application.
 	|
 	| Supported: "database", "eloquent"
@@ -52,6 +56,13 @@ return array(
 	| that should be used as your password reminder e-mail. You will also
 	| be able to set the name of the table that holds the reset tokens.
 	|
+<<<<<<< HEAD
+=======
+	| The "expire" time is the number of minutes that the reminder should be
+	| considered valid. This security feature keeps tokens short-lived so
+	| they have less time to be guessed. You may change this as needed.
+	|
+>>>>>>> 0f6a4969dbfcf20639d63623540c03401df34d2a
 	*/
 
 	'reminder' => array(
@@ -61,3 +72,4 @@ return array(
 	),
 
 );
+

@@ -54,6 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
+
 			'host'      => getenv('DB_HOST'),
 			'database'  => getenv('DB_NAME'),
 			'username'  => getenv('DB_USERNAME'),
@@ -114,6 +115,7 @@ return array(
 		'cluster' => true,
 
 		'default' => array(
+
 			'host'     => '127.0.0.1',
 			'port'     => 6379,
 			'database' => 0,
