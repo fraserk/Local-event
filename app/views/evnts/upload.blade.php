@@ -35,15 +35,12 @@
 		<br />
 			<?php 
 
-			$img = getimagesize(asset('/uploads/'.$evnt->id .'/'.$evnt->flier));
+			//$img = getimagesize(asset('/uploads/'.$evnt->id .'/'.$evnt->flier));
 			// echo ($img[0]);
 			?>
 			<br />
-			<img src={{asset('/uploads/'.$evnt->id .'/'.$evnt->flier)}}>
-			<h4>Thumbnail</h4>
-			<img src={{asset('/uploads/'.$evnt->id .'/' .'thumb_' .$evnt->flier)}}>
-			@else
-			no image yet.
+			<img src={{Cloudy::show($evnt->flier, array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20))}}>
+			
 			@endif
 	</div>
 
