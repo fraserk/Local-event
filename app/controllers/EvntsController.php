@@ -183,17 +183,17 @@ class EvntsController extends BaseController {
             $destinationpath = 'uploads/'.$evnt->id ;
             Input::file('flier')->move($destinationpath,$filename);
             $tags = 'kim';
-            Cloudy::upload($destinationpath .'/' .$filename,'blah',$tags);
+            Cloudy::upload($destinationpath .'/' .$filename,$filename,$tags);  //send photo to cloudy
+            File::deletedirectory($destinationpath); // temp folder
+            // if($imgwidth[0] > '340') //resize image if its bigger than 350 px
+            // {
+            //     //resize the image
+            //     Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(340, null, true)->save('uploads/'.$evnt->id .'/' .$evnt->flier);
 
-            if($imgwidth[0] > '340') //resize image if its bigger than 350 px
-            {
-                //resize the image
-                Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(340, null, true)->save('uploads/'.$evnt->id .'/' .$evnt->flier);
+            // }           
 
-            }           
-
-            //create the thumbnail as usuall
-            Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(200, 135, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
+            // //create the thumbnail as usuall
+            // Image::make('uploads/'.$evnt->id .'/'.$evnt->flier)->resize(200, 135, true)->save('uploads/'.$evnt->id .'/' .'thumb_'.$evnt->flier);
 
 
 
