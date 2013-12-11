@@ -28,16 +28,16 @@ html,body{
 }
 .divider{
 	margin-bottom: 5px;
-	height: 303px;
+	/*height: 303px;*/
 }
 .thumbnail .caption {
 padding: 5px;
 color: #333333;
 }
 .thumbnail{
-	border-radius: 0;
+	/*border-radius: 0;
 	padding: 0;
-	border: 1px solid #D8D8D8;
+	border: 1px solid #D8D8D8;*/
 }
 .coming{
 	margin-bottom: 20px;
