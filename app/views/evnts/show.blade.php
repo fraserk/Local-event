@@ -21,15 +21,19 @@
 		<!-- sidebar -->
 		<div class="col-md-5">
 				<div class="panel panel-default">
-					  <div class="panel-heading">When and Where</div>
+					  <div class="panel-heading">When/Where</div>
 							  <div class="panel-body">
-							    {{$evnt->when->toDayDateTimeString()}} @ <br />
-							    {{$evnt->venue->venue_name}}
+							    <strong>{{$evnt->when->toDayDateTimeString()}}</strong> <br />
+							   <div class="well well-sm">
+							   	<h3> {{$evnt->venue->venue_name}}</h3>
+							    {{$evnt->venue->address}}<br />
+							    {{$evnt->venue->phone}}
+								</div>
 							  </div>
 				</div>	
 
 				<div class="panel panel-default">
-					  <div class="panel-heading">Flier</div>
+					  <div class="panel-heading">Flier/Poster</div>
 							  <div class="panel-body">
 								    @if($evnt->flier)
 										
