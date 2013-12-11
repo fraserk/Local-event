@@ -16,6 +16,7 @@ web1:
     - app/storage/sessions
     - app/storage/views
     - app/storage/meta
+    - public/uploads
     
   document_root: /public
   php_version: 5.4.14
