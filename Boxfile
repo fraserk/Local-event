@@ -21,7 +21,7 @@ web1:
     - /app/database/migrations
     - /app/database/seeds
   document_root: /public
-  php_version: 5.3.8
+  php_version: 5.4.14
   php_extensions:
     - pdo_mysql
     - mcrypt
