@@ -39,7 +39,7 @@
 			// echo ($img[0]);
 			?>
 			<br />
-			<img src={{Cloudy::show($evnt->flier, array('width' => 150, 'height' => 150, 'crop' => 'fit', 'radius' => 20))}}>
+			<img src={{Cloudy::show($evnt->flier, array('width' => 350, 'height' => 300, 'crop' => 'fit', 'radius' => 0))}}>
 			
 			@endif
 	</div>
