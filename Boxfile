@@ -18,6 +18,8 @@ web1:
     - /storage/views
     - /storage/work
     - /storage/meta
+    - /app/database/migrations
+    - /app/database/seeds
   document_root: /public
   php_version: 5.3.8
   php_extensions:
@@ -30,7 +32,7 @@ web1:
 
     - gd
   before_deploy:
-    #- "php artisan migrate"
+    - "php artisan migrate"
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
