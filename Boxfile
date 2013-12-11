@@ -13,7 +13,7 @@ web1:
   shared_writable_dirs:
     - app/storage/cache
     - app/storage/logs
-    - app /storage/sessions
+    - app/storage/sessions
     - app/storage/views
     - app/storage/meta
     
@@ -27,7 +27,7 @@ web1:
     - curl
     - gd
   before_deploy:
-    #- "php artisan migrate"
+    - "php artisan migrate"
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"

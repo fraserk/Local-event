@@ -30,7 +30,7 @@ $env = $app->detectEnvironment(array(
 
 
 	'development' => array('localhost'),
-	'staging' => array('http://early-emmaline.gopagoda.com/'),
+	'production' => array('http://early-emmaline.gopagoda.com/'),
 
 ));
 
