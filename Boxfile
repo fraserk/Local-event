@@ -30,7 +30,7 @@ web1:
     - curl
     - gd
   before_deploy:
-    - "php artisan migrate"
+    #- "php artisan migrate"
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
