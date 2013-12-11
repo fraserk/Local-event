@@ -25,11 +25,9 @@ web1:
   php_extensions:
     - pdo_mysql
     - mcrypt
-    #- eaccelerator
     - memcached
     - mysqli
     - curl
-
     - gd
   before_deploy:
     - "php artisan migrate"
