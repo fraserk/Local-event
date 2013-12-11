@@ -19,18 +19,18 @@ web1:
     - /storage/work
     - /storage/meta
   document_root: /public
-  php_version: 5.3.23
+  php_version: 5.3.8
   php_extensions:
     - pdo_mysql
     - mcrypt
-    - eaccelerator
+    #- eaccelerator
     - memcached
     - mysqli
     - curl
 
     - gd
   before_deploy:
-    - "php artisan migrate"
+    #- "php artisan migrate"
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
