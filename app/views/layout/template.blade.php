@@ -19,7 +19,10 @@
 </head>
 <body>
   <section class="header"> 
-    <div class="container">                           
+    <div class="container"> 
+
+      <div class="col-sm-4 hidden-xs"><a href="/"> <img src={{asset('img/letsgo.png')}} /></a> </div>                         
+               <div class="col-sm-8 ">
                 <ul class="nav nav-pills pull-right">
                   <li class={{setactive('/')}}>{{HTML::linkroute('home','Home')}}</li>
                     <li class="{{setactive('evnts/create')}}">{{HTML::linkroute('evnts.create','Post Event')}}</li>
@@ -31,7 +34,8 @@
                    @endif
                                         
                  </ul>
-                <a href="/"> <img src={{asset('img/letsgo.png')}} /></a>
+               </div>
+                
     </div>
   </section>
 <section class="article wrapper">

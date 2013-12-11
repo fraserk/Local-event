@@ -38,7 +38,7 @@
 						    <div class="event_footer">
 						    	<span class="glyphicon glyphicon-time"></span> 
 						    	{{ $e->when->toDayDateTimeString() }}<br/>
-						    	<span class="glyphicon glyphicon-map-marker"></span> {{$e->venue->venue_name}}
+						    	<span class="glyphicon glyphicon-map-marker"></span> {{Str::Limit($e->venue->venue_name,$limit=25,$end='...')}}
 						    	
 						    </div>
 						</div>
