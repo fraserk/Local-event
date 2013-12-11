@@ -3,7 +3,7 @@
 $("button#submit").click(function(){
                $.ajax({
                 type: "POST",
-                url: "http://localhost/nygoing/public/venues",
+                url: "{{url('venues')}}",
 
                 data: $('form.add_venue').serialize(),
                 success: function(msg){
