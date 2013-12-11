@@ -111,7 +111,7 @@ class EvntsController extends BaseController {
         //$id = Input::get('id');
          $input = Input::all();
        
-       $v = Validator::make($input,evnt::$rules);
+       $v = Validator::make($input,Evnt::$rules);
        if ($v->fails())
        {
         return Redirect::route('evnts.create')->witherrors($v)->withinput();
