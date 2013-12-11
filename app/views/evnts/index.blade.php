@@ -23,7 +23,7 @@
 					    <div class="thumbnail">
 					    	<br />
 					    	@if($e->flier)
-					    	<img src={{Cloudy::show($evnt->flier, array('width' => 300, 'height' => 200, 'crop' => 'fit', 'radius' => 0))}}>
+					    	<img src={{Cloudy::show($e->flier, array('width' => 300, 'height' => 200, 'crop' => 'fit', 'radius' => 0))}}>
 					    	@else
 							<img src="http://placehold.it/300x200">
 							@endif
