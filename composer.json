@@ -11,7 +11,8 @@
 		 "cviebrock/eloquent-sluggable": "1.0.*",
 		 "frozennode/administrator": "dev-master",
 		 "cloudinary/cloudinary_php": "dev-master",
-		 "teepluss/cloudinary": "dev-master"
+		 "teepluss/cloudinary": "dev-master",
+		 "roumen/sitemap": "dev-master"
 		
 
 	},

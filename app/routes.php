@@ -30,6 +30,7 @@ Route::get('password_reset/reset/{token}','PasswordResetController@reset');
 Route::post('password_reset/reset/{token}','PasswordResetController@Postreset');
 Route::resource('venues', 'VenuesController',array('only'=>array('store')));
 Route::resource('password_reset','PasswordResetController');
+Route::get('/sitemap','EvntsController@sitemap');
 
 // Cabinet routes
 Route::get('upload/data', 'UploadController@data');

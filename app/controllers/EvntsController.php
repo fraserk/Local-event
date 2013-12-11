@@ -9,7 +9,7 @@ class EvntsController extends BaseController {
      */
  public function __construct()
     {
-        $this->beforefilter('auth', array('except'=>array('index','show')));
+        $this->beforefilter('auth', array('except'=>array('index','show','sitemap')));
     }
     
 
@@ -199,6 +199,20 @@ class EvntsController extends BaseController {
 
             return Redirect::route('upload',$evnt->slug)->with('message','file uploaded');
         }
+    }
+
+    public function sitemap()
+    {
+        $sitemap = App::make("sitemap");
+
+        $evnt = Evnt::all();
+
+        foreach ($evnt as $e) {
+           
+           $sitemap->add(route('evnts.show',$e->slug),$e->updated_at,'0.1', 'daily');
+        }
+        // Now, output the sitemap:
+      return $sitemap->render('xml');
     }
 
 }

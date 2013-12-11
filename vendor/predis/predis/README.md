@@ -49,8 +49,7 @@ managed using Composer, but you can also leverage its own autoloader if you are 
 project or script without any PSR-0 compliant autoloading facility:
 
 ```php
-<?php
-// prepend a base path if Predis is not available in your "include_path".
+// Prepend a base path if Predis is not available in your "include_path".
 require 'Predis/Autoloader.php';
 
 Predis\Autoloader::register();
@@ -109,7 +108,7 @@ it is recommended to refer to their specific documentation for details.
 
 Various aspects of the client can be easily configured by passing options to the second argument of
 `Predis\Client::__construct()`. Options are managed using a mini DI-alike container and their values
-are usually lazily initialized only when needed. Predis by defaults supports the following options:
+are usually lazily initialized only when needed. Predis by default supports the following options:
 
   - `profile`: which profile to use in order to match a specific version of Redis.
   - `prefix`: a prefix string that is automatically applied to keys found in commands.
