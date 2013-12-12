@@ -29,7 +29,7 @@ return array(
 	*/
 
 
-	'host' => 'smtp.gmail.com',
+	'host' => 'smtp.zoho.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return array(
 	|
 	*/
 
-	'port' => 587,
+	'port' => 465,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return array(
 	*/
 
 
-	'from' => array('address' => 'kimfraser@gmail.com', 'name' => 'kim fraser'),
+	'from' => array('address' => 'info@getnycevent.com', 'name' => 'getnycevent'),
 
 
 	/*
@@ -70,7 +70,7 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
+	'encryption' => 'ssl',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -84,7 +84,7 @@ return array(
 	*/
 
 
-	'username' => 'kimf@mmfsnyc.org',
+	'username' => 'info@getnycevent.com',
 
 
 	/*

@@ -29,10 +29,11 @@
                    @if(Auth::check())
                     <li class="">{{HTML::linkroute('logout','Log-out')}}</li>
                     <li class="{{setactive('dashboard')}}">{{HTML::linkroute('dashboard','My account')}}</li>
+                    
                    @else
                    <li class="{{setactive('user/login')}}">{{HTML::linkroute('login','Login')}}</li>
                    @endif
-                                        
+                    <li class="{{setactive('contact')}}">{{HTML::linkroute('contact','Contact Us')}}</li>                    
                  </ul>
                </div>
                 
