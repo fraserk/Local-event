@@ -13,7 +13,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">{{$evnt->name}} </div>
 					<div class="panel-body">		
-						{{$evnt->detail}}
+						{{nl2br($evnt->detail)}}
 					</div>
 			</div>		
 		</div>
