@@ -16,7 +16,7 @@
 						<div class="{{$errors->has('detail')? 'alert alert-warning' : ''}}">{{$errors->first('detail') }}</div>	
 
 						@if(Session::has('message'))
-							<div class="alert alert-info">{{session::get('message')}}</div>
+							<div class="alert alert-success">{{session::get('message')}}</div>
 							@endif
 							<div class="form-group">
                   				<div class="col-xs-12"> 

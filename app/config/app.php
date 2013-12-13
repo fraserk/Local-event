@@ -14,7 +14,7 @@ return array(
 	*/
 
 
-	'debug' => true,
+	'debug' => false,
 
 
 	/*
@@ -29,7 +29,7 @@ return array(
 	*/
 
 
-	'url' => 'http://early-emmaline.gopagoda.com/',
+	'url' => 'http://www.getnycevent.com/',
 
 
 	/*

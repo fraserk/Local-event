@@ -37,7 +37,7 @@
 							  <div class="panel-body">
 								    @if($evnt->flier)
 										
-											<img src={{Cloudy::show($evnt->flier, array('width' => 600, 'height' => 600, 'crop' => 'fit', 'radius' => 0))}}>									
+											<img src={{Cloudy::show($evnt->flier, array('width' => 600, 'height' => 350, 'crop' => 'fit', 'radius' => 0))}}>									
 											@else
 											no image
 									@endif

@@ -62,17 +62,17 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
     switch ($code)
     {
         
-        // case 403:
-        //     return Response::view('includes.403', array(), 403);
+        case 403:
+            return Response::view('includes.403', array(), 403);
 
-        // case 404:
-        //     return Response::view('includes.404', array(), 404);
+        case 404:
+            return Response::view('includes.404', array(), 404);
 
-        // case 500:
-        //     return Response::view('includes.500', array(), 500);
+        case 500:
+            return Response::view('includes.500', array(), 500);
 
-        // default:
-        //     return Response::view('includes.default', array(), $code);
+        default:
+            return Response::view('includes.default', array(), $code);
     }
 
 });

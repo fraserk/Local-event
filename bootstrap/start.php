@@ -30,7 +30,8 @@ $env = $app->detectEnvironment(array(
 
 
 	'development' => array('localhost'),
-	'production' => array('http://early-emmaline.gopagoda.com/'),
+
+	'production' => array('http://www.getnycevent.com/'),
 
 ));
 
