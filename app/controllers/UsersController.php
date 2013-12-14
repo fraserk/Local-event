@@ -15,7 +15,7 @@ class UsersController extends BaseController {
 	{
        // return View::make('user.login');
 		$id = Auth::user()->id;
-		$evnts = User::find($id)->evnts()->paginate(15);
+		$evnts = User::find($id)->evnts()->orderby('id','desc')->paginate(20);
 		 //dd($evnts);
 		return View::make('user.dashboard')->with('evnts',$evnts);
 	}

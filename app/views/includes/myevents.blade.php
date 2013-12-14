@@ -24,8 +24,8 @@
 					
 						<tr>
 							<td>{{$e->id}}</td>
-							<td>{{$e->name}}</td>
-							<td>{{$e->venue->venue_name}}</td>
+							<td>{{Str::Limit($e->name,$limit=35,$end='...')}}</td>
+							<td>{{Str::limit($e->venue->venue_name,$limit=35,$end='...')}}</td>
 							<td>{{$e->when->toDayDateTimeString()}}</td>
 							<td> <a href={{URL::route('evnts.edit',$e->slug)}}><span class="glyphicon glyphicon-edit"></span></a> |<a href={{URL::route('upload',$e->slug)}}><span class="glyphicon glyphicon-upload"></span></a>|</span><a href={{URL::route('remove',$e->slug) }}><span class="glyphicon glyphicon-trash"></span><a/></td>
 

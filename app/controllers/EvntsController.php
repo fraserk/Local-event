@@ -21,7 +21,7 @@ class EvntsController extends BaseController {
    
     public function index()
     {
-        $evnts = Evnt::with('venue')->paginate(20);
+        $evnts = Evnt::with('venue')->orderby('id','desc')->paginate(20);
         return View::make('evnts.index')->with('evnts',$evnts);
     }
 
