@@ -33,7 +33,7 @@
 						                            <h4>{{HTML::linkroute('evnts.show', Str::Limit($e->name,$limit=14, $end ='..'),$e->slug)}} </h4>
 						                            
 						                           
-						                            <p>{{Str::Limit($e->detail,$limit=45,$end='...')}}</p>
+						                            <p><?php echo strtolower(Str::Limit($e->detail,$limit=45,$end='...'))?></p>
 						    </div>
 						    <div class="event_footer">
 						    	<span class="glyphicon glyphicon-time"></span> 
