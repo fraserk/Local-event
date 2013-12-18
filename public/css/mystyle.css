@@ -135,4 +135,7 @@ h4{
         .wrapper > .container {
             padding-top: 20px;
         }
- 
+ .img_center{
+    display:block;
+    margin:auto;
+ }

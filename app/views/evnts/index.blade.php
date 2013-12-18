@@ -22,12 +22,15 @@
 				    
 					    <div class="thumbnail">
 					    	<br />
+					    	
 					    	 @if($e->flier)
+					    	 <div class="img_center">
 					    	<a href={{URL::route('evnts.show',$e->slug)}}><img src={{Cloudy::show($e->flier, array('width' => 300, 'height' => 180, 'crop' => 'fit', 'radius' => 0))}}></a>
+					    	</div>
 					    	@else
 							{{HTML::image('/img/nofler.png')}}
 							@endif
-					         
+					      
 					    
 						    <div class="caption">
 						                            <h4>{{HTML::linkroute('evnts.show', Str::Limit($e->name,$limit=14, $end ='..'),$e->slug)}} </h4>
