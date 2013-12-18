@@ -1,6 +1,5 @@
 <?php
 
-
 return array(
 
 	/**
@@ -85,7 +84,7 @@ return array(
 	 *
 	 * @type string
 	 */
-	'home_page' => 'User',
+	'home_page' => 'Evnt',
 
 	/**
 	 * The login path is the path where Administrator will send the user if they fail a permission check
