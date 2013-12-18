@@ -21,10 +21,22 @@
   <section class="header"> 
     <div class="container"> 
 
-      <div class="col-sm-4 hidden-xs"><a href="/"> <img src={{asset('img/letsgo.png')}} /></a> </div>                         
-               <div class="col-sm-8 ">
-                <ul class="nav nav-pills pull-right">
-                  <li class={{setactive('/')}}>{{HTML::linkroute('home','Home')}}</li>
+      <nav class="navbar navbar-default " role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#"> <img src={{asset('img/letsgo.png')}} /></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav pull-right">
+      <li class={{setactive('/')}}>{{HTML::linkroute('home','Home')}}</li>
                     <li class="{{setactive('evnts/create')}}">{{HTML::linkroute('evnts.create','Post Event')}}</li>
                    @if(Auth::check())
                     <li class="">{{HTML::linkroute('logout','Log-out')}}</li>
@@ -33,9 +45,10 @@
                    @else
                    <li class="{{setactive('user/login')}}">{{HTML::linkroute('login','Login')}}</li>
                    @endif
-                    <li class="{{setactive('contact')}}">{{HTML::linkroute('contact','Contact Us')}}</li>                    
-                 </ul>
-               </div>
+                    <li class="{{setactive('contact')}}">{{HTML::linkroute('contact','Contact Us')}}</li> 
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
                 
     </div>
   </section>

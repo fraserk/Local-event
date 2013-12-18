@@ -20,7 +20,7 @@
 							@endif
 							<div class="form-group">
                   				<div class="col-xs-12"> 
-								{{Form::label('name','Nam:',array())}}
+								{{Form::label('name','Name:',array())}}
 								{{ Form::text('name',null,array('class'=>'form-control','placeholder'=>'Name')) }}
 								
 								</div>

@@ -139,3 +139,18 @@ h4{
     display:block;
     margin:auto;
  }
+ .navbar-default {
+    background-color: #6F2885;
+    border: 0px;
+}
+
+.navbar-brand{
+    padding: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color: #ddd;
+}
